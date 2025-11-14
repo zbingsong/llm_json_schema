@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal iTC200",
+        "temperature": "25",
+        "binding_model": "one-site"
+    },
+    "measurement": {
+        "buffer": "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO",
+        "pH": "7.5",
+        "protein_concentration": "50 uM",
+        "ligand_concentration": "500 uM",
+        "protein_solution_volume": "300 uL",
+        "first_injection_volume": "0.4 uL",
+        "injection_volume": null,
+        "injection_time": null,
+        "time_between_injections": null,
+        "total_injections": "14 (compound 1 and 9) or 20 (compound 8)",
+        "stirring_speed": "750 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

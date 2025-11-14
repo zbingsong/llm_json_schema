@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "Microcal ITC200",
+        "temperature": "25",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "PBS",
+        "pH": null,
+        "protein_concentration": "30-40 uM",
+        "ligand_concentration": "300-600 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": null,
+        "injection_volume": "2 uL",
+        "injection_time": null,
+        "time_between_injections": null,
+        "total_injections": "20",
+        "stirring_speed": "300 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

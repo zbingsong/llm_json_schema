@@ -1,0 +1,24 @@
+{
+	"type": "itc",
+	"global": {
+		"instrument": null,
+		"temperature": "25",
+		"binding_model": null
+	},
+	"measurement": {
+		"buffer": "20 mM KH2PO4/K2HPO4, 100 mM KCl, 1 mM MgCl2",
+		"pH": null,
+		"protein_concentration": "10 uM",
+		"ligand_concentration": "100 uM",
+		"protein_solution_volume": "250 uL",
+		"first_injection_volume": null,
+		"injection_volume": "2.5 uL",
+		"injection_time": null,
+		"time_between_injections": null,
+		"total_injections": null,
+		"stirring_speed": null,
+		"reference_cell_content": null,
+		"reference_power": null
+	},
+	"control": null
+}

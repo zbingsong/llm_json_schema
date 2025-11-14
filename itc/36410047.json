@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal ITC200",
+        "temperature": "30",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "PBS, 0.5% DMSO",
+        "pH": "7.4",
+        "protein_concentration": "6 uM",
+        "ligand_concentration": "120 uM",
+        "protein_solution_volume": "280 uL",
+        "first_injection_volume": "0.1 uL",
+        "injection_volume": "1.5 uL",
+        "injection_time": null,
+        "time_between_injections": "100 s",
+        "total_injections": "16",
+        "stirring_speed": "1000 rpm",
+        "reference_cell_content": "280 uL filtered Millipore water",
+        "reference_power": null
+    },
+    "control": null
+}

@@ -1,0 +1,35 @@
+{
+  "type": "bli",
+  "global": {
+    "instrument": "FortéBio RED384",
+    "sensor_type": null,
+    "temperature": "25",
+    "binding_model": null
+  },
+  "ligand_loading": {
+    "loading": {
+      "buffer": null,
+      "pH": null,
+      "ligand_concentration": "6 uM",
+      "loading_time": null,
+      "immobilization_level": null
+    },
+    "post_wash": {
+      "buffer": null,
+      "wash_time": null
+    }
+  },
+  "measurement": {
+    "buffer": null,
+    "pH": null,
+    "association_phase": {
+      "compound_concentration": "200 uM",
+      "association_time": "30 s"
+    },
+    "dissociation_phase": {
+      "dissociation_time": "30 s"
+    },
+    "stirring_speed": null
+  },
+  "control": "16 reference sensors run serially; double reference subtraction performed; samples include 14 negative controls, and 14 positive controls"
+}

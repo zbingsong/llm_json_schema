@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal PEAQ-ITC",
+        "temperature": "25",
+        "binding_model": "one-site"
+    },
+    "measurement": {
+        "buffer": " 20 mM Tris-HCl, 150 mM KCl, 0.05 mM EDTA, and 0.8 mM MgCl2",
+        "pH": "7.2",
+        "protein_concentration": "40 uM",
+        "ligand_concentration": "400 uM",
+        "protein_solution_volume": "204 uL",
+        "first_injection_volume": null,
+        "injection_volume": "2.0 uL",
+        "injection_time": "4.0 s",
+        "time_between_injections": "150-300 s",
+        "total_injections": "20",
+        "stirring_speed": "750 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

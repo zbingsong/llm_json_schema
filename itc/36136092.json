@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal VP-ITC",
+        "temperature": "20",
+        "binding_model": "one-site"
+    },
+    "measurement": {
+        "buffer": "20 mM HEPES, 150 mM NaCl, 0.5 mM TCEP, 5% glycerol",
+        "pH": "7.4",
+        "protein_concentration": "10 uM",
+        "ligand_concentration": "105 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": null,
+        "injection_volume": "10 uL",
+        "injection_time": null,
+        "time_between_injections": "5 min",
+        "total_injections": "28",
+        "stirring_speed": null,
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

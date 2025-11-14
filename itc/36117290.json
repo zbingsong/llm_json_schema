@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal iTC200",
+        "temperature": "23",
+        "binding_model": "one-site"
+    },
+    "measurement": {
+        "buffer": "20 mM Tris, 100 mM NaCl, 0.5 mM TCEP, 2.5% DMSO",
+        "pH": "7.5",
+        "protein_concentration": "50-200 uM (GID4 124-289) or 50 uM (GID4 Q282A)",
+        "ligand_concentration": "0.75-1.8 mM",
+        "protein_solution_volume": null,
+        "first_injection_volume": "0.5 uL (compound 16 and 67) or 1 uL (compound 88)",
+        "injection_volume": "1 uL (compound 16 and 67) or 2 uL (compound 88, final injection 1.9 uL)",
+        "injection_time": null,
+        "time_between_injections": "150 s (compound 16 and 67) or 180 s (compound 88)",
+        "total_injections": "39 (compound 16 and 67) or 19 (compound 88)",
+        "stirring_speed": null,
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": "titrating the compound into the buffer"
+}

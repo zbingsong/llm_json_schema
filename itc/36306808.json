@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal Auto-iTC200",
+        "temperature": "25",
+        "binding_model": "two-site"
+    },
+    "measurement": {
+        "buffer": "PBS, 100 mM KCl, 1 mM EDTA, 2.5% DMSO",
+        "pH": "7.0",
+        "protein_concentration": "5 uM",
+        "ligand_concentration": "100 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": null,
+        "injection_volume": "2 uL",
+        "injection_time": null,
+        "time_between_injections": "150 s",
+        "total_injections": null,
+        "stirring_speed": "750 rpm",
+        "reference_cell_content": null,
+        "reference_power": "10 ucal/s"
+    },
+    "control": null
+}

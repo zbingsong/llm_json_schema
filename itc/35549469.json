@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal PEAQ-ITC",
+        "temperature": "25",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "25 mM HEPES, 200 mM NaCl, 5% DMSO",
+        "pH": "7.4",
+        "protein_concentration": "50 uM",
+        "ligand_concentration": "500 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": "0.3 uL",
+        "injection_volume": "1.3 uL",
+        "injection_time": null,
+        "time_between_injections": "120 s",
+        "total_injections": "30",
+        "stirring_speed": "750 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

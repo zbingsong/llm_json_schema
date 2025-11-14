@@ -1,0 +1,37 @@
+{
+  "type": "bli",
+  "global": {
+    "instrument": "FortéBio Octet K2",
+    "sensor_type": "Ni-NTA (for IDO1); AR2G (for CRBN)",
+    "temperature": "30",
+    "binding_model": "1:1"
+  },
+  "ligand_loading": {
+    "loading": {
+      "buffer": "PBS, 0.5% DMSO",
+      "pH": "7.4",
+      "ligand_concentration": "55 ug/mL (IDO1); unknown (CRBN)",
+      "loading_time": "360 s",
+      "immobilization_level": "6 nm"
+    },
+    "post_wash": {
+      "buffer": null,
+      "wash_time": null
+    }
+  },
+  "measurement": {
+    "buffer": "PBS, 0.5% DMSO",
+    "pH": "7.4",
+    "association_phase": {
+      "compound_concentration": "80 uM",
+      "association_time": null
+    },
+    "dissociation_phase": {
+      "dissociation_time": null
+    },
+    "stirring_speed": "1000 rpm"
+  },
+  "control": {
+    "description": "Biosensors without ligands were titrated with analyte and used as a parallel reference control. Ligand-loaded biosensors without analytes were used as a baseline. Double-referenced data were used."
+  }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal MSC",
+        "temperature": "25",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "20 mM Tris-HCl, 1 mM EDTA, 1% DMSO (compound only)",
+        "pH": "7.5",
+        "protein_concentration": "31 uM",
+        "ligand_concentration": "310 uM (radicicol) or 300 uM (geldanamycin)",
+        "protein_solution_volume": "1.3 mL",
+        "first_injection_volume": null,
+        "injection_volume": "15 uL",
+        "injection_time": null,
+        "time_between_injections": null,
+        "total_injections": "16",
+        "stirring_speed": null,
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": "addition of radicicol or geldanamycin into buffer and buffer into protein"
+}

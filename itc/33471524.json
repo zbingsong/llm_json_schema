@@ -1,0 +1,24 @@
+{
+	"type": "itc",
+	"global": {
+		"instrument": "Microcal ITC200",
+		"temperature": "25°C",
+		"binding_model": null
+	},
+	"measurement": {
+		"buffer": "100 mM NaCl, 0.1% (w/v) PEG 8000, HEPES, Tricine, or Tris (thrombin); 80 mM NaCl, 10 mM CaCl2, 0.1% (w/v) PEG 8000, and 100 mM HEPES, Tricine, or Tris (trypsin)",
+		"pH": "7.8 (thrombin); 7.6 (trypsin)",
+		"protein_concentration": "50 uM (2L to thrombin); 60 uM (3L to thrombin)",
+		"ligand_concentration": "0.5 mM (2L to thrombin); 0.6 mM (3L to thrombin)",
+		"protein_solution_volume": null,
+		"first_injection_volume": "0.3 uL",
+		"injection_volume": "1.4 uL (2L to thrombin); 1.9 uL (3L to thrombin); 1.5-1.8 uL (3L to trypsin)",
+		"injection_time": null,
+		"time_between_injections": "180 s (2L and 3L to thrombin); 220 s (3L to trypsin)",
+		"total_injections": "15 (2L to thrombin); 12 (3L to thrombin); 20-25 (3L to trypsin)",
+		"stirring_speed": null,
+		"reference_cell_content": null,
+		"reference_power": "5 ucal/s"
+	},
+	"control": "Titrations performed in three different buffer systems (HEPES, Tricine, and Tris) enabled correction for any proton transfer occurring between the buffer and protein upon complex formation."
+}

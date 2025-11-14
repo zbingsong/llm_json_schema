@@ -1,0 +1,24 @@
+{
+	"type": "itc",
+	"global": {
+		"instrument": "MicroCal ITC-200",
+		"temperature": "25",
+		"binding_model": "one-site"
+	},
+	"measurement": {
+		"buffer": "10 mM HEPES, 150 mM NaCl, 0.05% (v/v) Tween 20, 1 mM TCEP, 1% DMSO",
+		"pH": "7.40",
+		"protein_concentration": "60 uM",
+		"ligand_concentration": "0.6 mM",
+		"protein_solution_volume": null,
+		"first_injection_volume": null,
+		"injection_volume": "2 uL",
+		"injection_time": null,
+		"time_between_injections": "90 s",
+		"total_injections": "19",
+		"stirring_speed": null,
+		"reference_cell_content": null,
+		"reference_power": null
+	},
+	"control": null
+}

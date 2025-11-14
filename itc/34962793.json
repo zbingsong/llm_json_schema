@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal ITC200",
+        "temperature": "25",
+        "binding_model": "one-site"
+    },
+    "measurement": {
+        "buffer": "50 mM HEPES, 150 mM NaCl, 0.5 mM TCEP",
+        "pH": "7.5",
+        "protein_concentration": "500-600 uM",
+        "ligand_concentration": "40-60 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": "0.5 uL",
+        "injection_volume": "2 uL",
+        "injection_time": "4 s",
+        "time_between_injections": "180 s",
+        "total_injections": "21",
+        "stirring_speed": "1000 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": "proteins were titrated into ITC buffer"
+}

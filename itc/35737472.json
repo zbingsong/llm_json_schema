@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal-PeaQ ITC",
+        "temperature": "25",
+        "binding_model": "one-to-one binding model"
+    },
+    "measurement": {
+        "buffer": "50 mM tris-HCl, 250 mM NaCl, 5% glycerol, 1% v/v DMSO",
+        "pH": "8",
+        "protein_concentration": "350 uM (T1), 330 uM (B1)",
+        "ligand_concentration": "60 uM (T1), 35 uM (B1)",
+        "protein_solution_volume": null,
+        "first_injection_volume": "0.4 uL",
+        "injection_volume": "3.5 uL",
+        "injection_time": "0.8 s for the first injection and 7 s for the rest",
+        "time_between_injections": "5 min",
+        "total_injections": "12",
+        "stirring_speed": "300 rpm",
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": "subtraction of control titration"
+}

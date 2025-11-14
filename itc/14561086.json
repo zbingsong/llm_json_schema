@@ -1,0 +1,24 @@
+{
+	"type": "itc",
+	"global": {
+		"instrument": "Microcal VP-ITC",
+		"temperature": "25",
+		"binding_model": "one-site"
+	},
+	"measurement": {
+		"buffer": "10 mM sodium phosphate, 1 mM TCEP, 1% DMSO",
+		"pH": "7.0",
+		"protein_concentration": "75-225 uM",
+		"ligand_concentration": "10-30 uM",
+		"protein_solution_volume": null,
+		"first_injection_volume": null,
+		"injection_volume": "8-15 uL",
+		"injection_time": null,
+		"time_between_injections": "500 s",
+		"total_injections": null,
+		"stirring_speed": null,
+		"reference_cell_content": null,
+		"reference_power": null
+	},
+	"control": null
+}

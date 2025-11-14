@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "MicroCal VP-ITC",
+        "temperature": "25",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "10 mM Hepes, 150 mM NaCl, 3mM EDTA",
+        "pH": "7.4",
+        "protein_concentration": "14.8 uM",
+        "ligand_concentration": "400 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": null,
+        "injection_volume": "3 uL",
+        "injection_time": null,
+        "time_between_injections": "5 min",
+        "total_injections": null,
+        "stirring_speed": null,
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

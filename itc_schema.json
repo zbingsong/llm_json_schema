@@ -1,0 +1,75 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": {
+            "description": "Brand and model of the ITC instrument used. Be concise and avoid including extra information such as manufacturer location.",
+            "examples": ["MicroCal VP-ITC", "MicroCal PEAQ-ITC"]
+        },
+        "temperature": {
+            "description": "Temperature at which the ITC experiment was conducted, without unit because it is always in Celsius. Sometimes it is written as \"room temperature\" or \"RT\", in which case you can assume it is 25.",
+            "examples": ["25", "37"]
+        },
+        "binding_model": {
+            "description": "The binding model used to fit the ITC data. Common models include \"one-site\", \"two-sites\", \"sequential-binding\", etc. One-site is the most common model, which has other names like single-site or independent sites, but you should note them all as one-site.",
+            "examples": ["one-site", "two-sites", "sequential-binding"]
+        }
+    },
+    "measurement": {
+        "buffer": {
+            "description": "Composition of the buffer used in the ITC experiment. Always put concentration before the chemical (for example \"10 mM NaCl\" instead of \"NaCl 10 mM\"). Remove pH information from the \"buffer\" key and add it to the \"pH\" key instead. Make sure you account for DMSO or other cosolvents if present as they are sometimes not reported as part of the buffer. Separate multiple components with commas only.",
+            "examples": ["10 mM Hepes, 150 mM NaCl, 3mM EDTA", "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO", "20 mM Tris-HCl, 1 mM EDTA (protein), 1% DMSO (ligand)"]
+        },
+        "pH": {
+            "description": "pH of the buffer used in the ITC experiment.",
+            "examples": ["7.4", "6.8"]
+        },
+        "protein_concentration": {
+            "description": "Concentration of the protein in the ITC experiment. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one.",
+            "examples": ["15 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "75-225 uM"]
+        },
+        "ligand_concentration": {
+            "description": "Concentration of the ligand in the ITC experiment. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high  unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one.",
+            "examples": ["30 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "10-30 uM"]
+        },
+        "protein_solution_volume": {
+            "description": "Total volume of the protein solution used in the ITC experiment. This is usually also the volume of the sample cell.",
+            "examples": ["3 mL", "270 uL"]
+        },
+        "first_injection_volume": {
+            "description": "Volume of the first injection in the ITC experiment. If the first few injections (more than one) have different volumes, report the volume and note how many injections have that volume.",
+            "examples": ["0.1 uL", "0.2 uL for the first five injections", "0.5 uL (radicicol); 0.1 uL (geldanamycin)"]
+        },
+        "injection_volume": {
+            "description": "Volume of each subsequent injection in the ITC experiment. If the volume is given as a range, keep it as a range in this format: \"low-high  unit\".",
+            "examples": ["2 uL", "2-10 uL"]
+        },
+        "injection_time": {
+            "description": "Duration of each injection in the ITC experiment. This is usually very short (a few seconds). If only one time for injection is reported, typically it is the \"time_between_injections\".",
+            "examples": ["5 s", "2 s (compound 1); 3 s (compound 2)"]
+        },
+        "time_between_injections": {
+            "description": "Time between each injection in the ITC experiment. This is usually a few minutes. If only one time for injection is reported, typically it is the \"time_between_injections\".",
+            "examples": ["5 min"]
+        },
+        "total_injections": {
+            "description": "Total number of injections in the ITC experiment. Sometimes the first injection (or first few injections) is a small one and should be excluded from data analysis. In this case, still report the total number of injections including the first one(s).",
+            "examples": ["20", "10-30"]
+        },
+        "stirring_speed": {
+            "description": "Stirring speed during the ITC experiment.",
+            "examples": ["1000 rpm"]
+        },
+        "reference_cell_content": {
+            "description": "Content of the reference cell in the ITC experiment. Usually it is water or buffer.",
+            "examples": ["water only", "buffer only"]
+        },
+        "reference_power": {
+            "description": "Power of the reference cell in the ITC experiment.",
+            "examples": ["10 ucal/s"]
+        }
+    },
+    "control": {
+        "description": "Sometimes, a reference experiment (usually called \"reference\", \"control\", or \"double reference\") is run without the ligand, without the compound, using a different buffer system, or using an unreactive pair of ligand-compound. Note that this is not the same as the reference cell in the instrument, but rather a complete, independent measurement for control purpose. You should briefly describe the reference experiment in the \"control\" key if such an experiment is available, focusing on how the reference experiment is different from the actual measurement. If conditions from the actual measurement are used as baseline (as opposed to a full control experiment), leave this key as null.",
+        "examples": ["titration of ligand into buffer without protein", "proteins were titrated into ITC buffer"]
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "type": "itc",
+    "global": {
+        "instrument": "TA Instruments Nano ITC",
+        "temperature": "15",
+        "binding_model": null
+    },
+    "measurement": {
+        "buffer": "20 mM HEPES, 150 mM NaCl, 0.5 mM TCEP, and 5% glycerol",
+        "pH": "7.4",
+        "protein_concentration": "100 uM",
+        "ligand_concentration": "10-20 uM",
+        "protein_solution_volume": null,
+        "first_injection_volume": null,
+        "injection_volume": "8 uL",
+        "injection_time": null,
+        "time_between_injections": null,
+        "total_injections": "30",
+        "stirring_speed": null,
+        "reference_cell_content": null,
+        "reference_power": null
+    },
+    "control": null
+}

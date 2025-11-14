@@ -1,0 +1,105 @@
+You are an expert academic researcher with a deep understanding of research methodologies and journal publication, especially in binding affinity assays on protein-ligand interactions. Now I will provide a journal article that measures the binding affinity using the BLI technique. BLI works like this:
+First, the ligand (usually the protein) is loaded onto the sensor tip. Then, the loaded sensor tip is dipped sequentially into a well containing (1) the reaction buffer for baseline, (2) the compound solution for association, and (3) the buffer again for dissociation. Binding is measured by a change in the interference pattern of the sensor tip. Soemtimes the experiment is repeated without the protein or without the titrant to account for solvation heat (called "double reference" or "control").
+Your task is as follows:
+1. Given a PDF of a journal article and optionally a PDF of its supplemenal information, read the article and the supplemenal information if provided, focusing on the experimental conditions;
+2. Extract experimental conditions measuring protein-ligand binding affinity from the article in a specific JSON schema, which will be provided. 
+There may be multiple binding experiments in the paper. You should only focus on those that use the BLI technique. Note that detailed experimental procedures may either be in the Methods/Experimental section, in the caption of figures, or in the supplemenal information.
+The JSON schema is provided below.
+```
+{
+    "type": "bli",
+    "global": {
+        "instrument": {
+            "description": "Brand and model of the ITC instrument used. Be concise and avoid including extra information such as manufacturer location.",
+            "examples": ["FortéBio RED384"]
+        },
+        "sensor_type": {
+            "description": "Type of sensor used in the BLI experiment. Common types include \"Streptavidin-coated\", \"Protein A-coated\", \"Ni-NTA-coated\", etc. Be sure to note the exact type if mentioned, as it can affect binding.",
+            "examples": ["Streptavidin-coated", "Protein A-coated", "Ni-NTA-coated"]
+        },
+        "temperature": {
+            "description": "Temperature at which the ITC experiment was conducted, without unit because it is always in Celsius. Sometimes it is written as \"room temperature\" or \"RT\", in which case you can assume it is 25.",
+            "examples": ["25", "37"]
+        },
+        "binding_model": {
+            "description": "The binding model used to fit the ITC data. Common models include \"one-site\", \"two-sites\", \"sequential-binding\", etc. One-site is the most common model, which has other names like single-site or independent sites, but you should note them all as one-site. If stoichiometry is mentioned (e.g., 1:1, 2:1), also include it.",
+            "examples": ["one-site 1:1", "1:2", "two-sites"]
+        }
+    },
+    "ligand_loading": {
+        "loading": {
+            "buffer": {
+                "description": "Composition of the buffer used for loading the ligand onto the sensor. Always put concentration before the chemical (for example \"10 mM NaCl\" instead of \"NaCl 10 mM\"). Remove pH information from the \"buffer\" key and add it to the \"pH\" key instead. Make sure you account for DMSO or other cosolvents if present as they are sometimes not reported as part of the buffer. Separate multiple components with commas only.",
+                "examples": ["10 mM Hepes, 150 mM NaCl, 3mM EDTA", "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO", "20 mM Tris-HCl, 1 mM EDTA (protein), 1% DMSO (ligand)"]
+            },
+            "pH": {
+                "description": "pH of the buffer used for loading the ligand onto the sensor.",
+                "examples": ["7.4", "6.8"]
+            },
+            "ligand_concentration": {
+                "description": "Concentration of the ligand for loading. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\" and \"20 mM Tris-HCl, 1 mM EDTA (protein), 1% DMSO (ligand)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high  unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one.",
+                "examples": ["30 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "10-30 uM"]
+            },
+            "loading_time": {
+                "description": "Time duration for loading the ligand onto the sensor. This is the amount of time the sensor tip is dipped into the ligand solution. Typically ranges from a few minutes to tens of minutes.",
+                "examples": ["5 min", "10 min"]
+            },
+            "immobilization_level": {
+                "description": "The level of ligand immobilized on the sensor, usually reported in response units (RU).",
+                "examples": ["1000 RU"]
+            }
+        },
+        "post_wash": {
+            "buffer": {
+                "description": "Composition of the buffer used for washing the sensor tip after loading the ligand onto the sensor. Always put concentration before the chemical (for example \"10 mM NaCl\" instead of \"NaCl 10 mM\"). Remove pH information from the \"buffer\" key and add it to the \"pH\" key instead. Make sure you account for DMSO or other cosolvents if present as they are sometimes not reported as part of the buffer. Separate multiple components with commas only.",
+                "examples": ["10 mM Hepes, 150 mM NaCl, 3mM EDTA", "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO"]
+            },
+            "wash_time": {
+                "description": "Time duration for washing the sensor tip after loading the ligand onto the sensor. This is the amount of time the sensor tip is dipped into the wash buffer.",
+                "examples": ["1 min", "2 min"]
+            }
+        }
+    },
+    "measurement": {
+        "buffer": {
+            "description": "Composition of the buffer used for measuring binding affinity. Always put concentration before the chemical (for example \"10 mM NaCl\" instead of \"NaCl 10 mM\"). Remove pH information from the \"buffer\" key and add it to the \"pH\" key instead. Make sure you account for DMSO or other cosolvents if present as they are sometimes not reported as part of the buffer. Separate multiple components with commas only.",
+            "examples": ["10 mM Hepes, 150 mM NaCl, 3mM EDTA", "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO"]
+        },
+        "pH": {
+            "description": "pH of the buffer used for measuring binding affinity.",
+            "examples": ["7.4", "6.8"]
+        },
+        "association_phase": {
+            "compound_concentration": {
+                "description": "Concentration of the ligand in the ITC experiment. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one. If a series of dilutions is used, just extract the concentration of the highest one or the concentration of the stock solution used.",
+                "examples": ["30 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "10-30 uM"]
+            },
+            "association_time": {
+                "description": "Time duration for the association phase in the BLI experiment. This is the amount of time the sensor tip is dipped into the compound solution.",
+                "examples": ["5 min", "10 min"]
+            }
+        },
+        "dissociation_phase": {
+            "dissociation_time": {
+                "description": "Time duration for the dissociation phase in the BLI experiment. This is the amount of time the sensor tip is dipped into the buffer after the association phase.",
+                "examples": ["5 min", "10 min"]
+            }
+        },
+        "stirring_speed": {
+            "description": "Stirring speed during the ITC experiment.",
+            "examples": ["1000 rpm"]
+        }
+    },
+    "control": {
+        "description": "Sometimes, a reference experiment (usually called \"reference\", \"control\", or \"double reference\") is run without the ligand, without the compound, using a different buffer system, or using an unreactive pair of ligand-compound. Note that this is not the same as the reference cell in the instrument, but rather a complete, independent measurement for control purpose. You should briefly describe the reference experiment in the \"control\" key if such an experiment is available, focusing on how the reference experiment is different from the actual measurement. If conditions from the actual measurement are used as baseline (as opposed to a full control experiment), leave this key as null.",
+        "examples": ["biosensor without ligand was titrated with analyte"]
+    }
+}
+```
+You should fill in the values using experimental conditions extracted from the journal article following below directions: 
+- Keep the structure of the JSON schema by replacing each `{"description": "something", "examples": ["example one"]}` object with a string value you extract from the paper.
+- If an experimental parameter is not **explicitly** provided, still keep the key and set its value to null (the null value of JSON, not the "null" string). Only faithfully record what is provided in the article and its supplemenal information and do not infer anything by yourself. 
+- Use "uM", "uL" instead of "μM", "μL" for better compatibility.
+- Occasionally, you may need to look beyond the binding affinity experimental procedures part to look for some information, for example content of the buffer system.
+- Only output the completed JSON schema. DO NOT include any other text in your response. You don't need to show citations from the journal article; just extract and return the information.
+The PDF of the journal article is attached.

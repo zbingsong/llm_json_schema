@@ -1,0 +1,55 @@
+{
+    "type": "spr",
+    "global": {
+        "instrument_brand": "Biacore AB",
+        "instrument_model": "Biacore4000",
+        "sensor_chip": "Series S Sensor Chip NTA, GE Healthcare",
+        "temperature": 25,
+        "binding_model": "one_site, 1:1",
+        "ligand": "Recombinant human Cyclophilin D protein (amino acids 44-207, K175I)",
+        "compound": ""
+    },
+    "immobilization": {
+        "pre_wash": {
+            "buffer": "350 mM EDTA",
+            "wash_time": "5 min",
+            "flow_rate": "10 uL/min"
+        },
+        "ligand_loading": {
+            "buffer": "20 mM HEPES/NaOH, 150 mM NaCl, 0.3 mM DTT, 0.1 mM EDTA",
+            "pH": 7.4,
+            "ligand_concentration": "30 uM",
+            "contact_time": "10 min",
+            "flow_rate": "10 uL/min",
+            "immobilization_level": "1000 RU"
+        },
+        "surface_activation": {
+            "buffer": "0.5M NHS and 2M EDC",
+            "activation_time": "10 min",
+            "activation_flow_rate": "10 uL/min"
+        },
+        "post_wash": {
+            "buffer":"10 mM Hepes, 150 mM NaCl, 3mM EDTA",
+            "wash_time": "5 min"
+        }
+    },
+    "measurement": {
+        "buffer": "10 mM Hepes, 150 mM NaCl, 3mM EDTA",
+        "pH": 7.4,
+        "reference": "biosensors without ligands were titrated with an analyte",
+        "association_phase": {
+            "compound_concentration": "10 uM",
+            "flow_rate": "10 uL/min",
+            "association_time": "5 min"
+        },
+        "dissociation_phase": {
+            "dissociation_time": "5 min"
+        },
+        "surface_regeneration": {
+            "buffer": "9:1 1M NaCl: Glycerol",
+            "regeneration_time": "30 s",
+            "flow_rate": "30 uL/min"
+        }
+    },
+    "control": "Cyclophilin D inhibitor 2 as analyte"
+}

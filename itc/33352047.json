@@ -1,0 +1,24 @@
+{
+	"type": "itc",
+	"global": {
+		"instrument": "MicroCal PEAQ-ITC",
+		"temperature": "25",
+		"binding_model": "one-site"
+	},
+	"measurement": {
+		"buffer": "20 mM HEPES, 150 mM KCl, 5% DMSO",
+		"pH": null,
+		"protein_concentration": "3.0 uM",
+		"ligand_concentration": "250 uM",
+		"protein_solution_volume": "300 uL",
+		"first_injection_volume": null,
+		"injection_volume": "2 uL",
+		"injection_time": null,
+		"time_between_injections": "2.5 min",
+		"total_injections": null,
+		"stirring_speed": null,
+		"reference_cell_content": null,
+		"reference_power": null
+	},
+	"control": "Control experiments were carried out by titration of the inhibitors into buffer, buffer into STAT3, and buffer into buffer. The three controls were used as a composite to subtract the heat of dilution and background noise."
+}

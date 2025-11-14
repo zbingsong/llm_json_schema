@@ -1,0 +1,24 @@
+{
+  "type": "itc",
+  "global": {
+    "instrument": "Microcal MCS calorimeter",
+    "temperature": null,
+    "binding_model": "one-site (benzenesulfonamide); two-site (BR30)"
+  },
+  "measurement": {
+    "buffer": null,
+    "pH": null,
+    "protein_concentration": "10 uM",
+    "ligand_concentration": null,
+    "protein_solution_volume": "1.8 mL",
+    "first_injection_volume": "1 uL",
+    "injection_volume": "4 uL",
+    "injection_time": null,
+    "time_between_injections": null,
+    "total_injections": null,
+    "stirring_speed": "400 rpm",
+    "reference_cell_content": "0.03% azide solution in water",
+    "reference_power": null
+  },
+  "control": "Titration of inhibitor into buffer (blank)"
+}

@@ -1,0 +1,24 @@
+{
+  "type": "itc",
+  "global": {
+    "instrument": "MicroCal PEAQ-ITC (Malvern)",
+    "temperature": "25",
+    "binding_model": null
+  },
+  "measurement": {
+    "buffer": "20 mM HEPES, 150 mM NaCl, 10% glycerol",
+    "pH": "7.5",
+    "protein_concentration": "20 uM",
+    "ligand_concentration": "200 uM",
+    "protein_solution_volume": null,
+    "first_injection_volume": "0.4 uL",
+    "injection_volume": "2 uL",
+    "injection_time": null,
+    "time_between_injections": "150 s",
+    "total_injections": "20",
+    "stirring_speed": "750 rpm",
+    "reference_cell_content": null,
+    "reference_power": null
+  },
+  "control": null
+}

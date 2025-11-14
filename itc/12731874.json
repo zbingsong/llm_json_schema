@@ -1,0 +1,24 @@
+{
+  "type": "itc",
+  "global": {
+    "instrument": "Calorimetric Sciences Corp.",
+    "temperature": "25",
+    "binding_model": "one-site"
+  },
+  "measurement": {
+    "buffer": "20 mM HEPES-KOH, 5 mM MgCl2, 0.5 mM DTT, 50 mM KCl",
+    "pH": "7.2",
+    "protein_concentration": "46 uM (ATP); 33.7 uM (GSAd)",
+    "ligand_concentration": "2.34 mM (ATP); 1.8 mM (GSAd)",
+    "protein_solution_volume": "1.2-1.25 mL",
+    "first_injection_volume": "2.5 uL",
+    "injection_volume": "2.5 uL",
+    "injection_time": null,
+    "time_between_injections": "300 s",
+    "total_injections": "25-30",
+    "stirring_speed": "75 rpm",
+    "reference_cell_content": null,
+    "reference_power": null
+  },
+  "control": "titrations of ligand into buffer without enzyme were performed to determine the heats of dilution"
+}
