@@ -102,4 +102,5 @@ You should fill in the values using experimental conditions extracted from the j
 - Use "uM", "uL" instead of "μM", "μL" for better compatibility.
 - Occasionally, you may need to look beyond the binding affinity experimental procedures part to look for some information, for example content of the buffer system.
 - Only output the completed JSON schema. DO NOT include any other text in your response. You don't need to show citations from the journal article; just extract and return the information.
+- If the detailed experimental procedures are not available in this paper (for example, some papers may state that the procedures have been described previously), you should look up the referenced paper and extract experimental procedures from there.
 The PDF of the journal article is attached.

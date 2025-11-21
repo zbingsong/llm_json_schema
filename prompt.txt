@@ -1,42 +1,19 @@
-You are an expert academic researcher with a deep understanding of research methodologies and journal publication, especially in binding affinity assays on protein-ligand interactions. Now I will provide a journal article that measures the binding affinity using the ITC technique. ITC works like this:
-First, protein solution is injected into the sample cell and pure buffer or water is injected into the reference cell. Then the drug (or titrante) solution is injected into the sample cell and the heat change of reaction is measured. Usually the experiment is repeated without the protein or without the titrant to account for solvation heat (called "double reference" or "control"). First injection of the drug solution is often done in a smaller volume and discarded.
+You are an expert academic researcher with a deep understanding of research methodologies and journal publication, especially in binding affinity assays on protein-ligand interactions. Now I will provide a journal article that measures the binding affinity using the XYZ technique.
+XYZ works like this:
+### Briefly describe how the experimental technique works
 Your task is as follows:
 1. Given a PDF of a journal article and optionally a PDF of its supplemenal information, read the article and the supplemenal information if provided, focusing on the experimental conditions;
 2. Extract experimental conditions measuring protein-ligand binding affinity from the article in a specific JSON schema, which will be provided. 
-There may be multiple binding experiments in the paper. You should only focus on those that use the ITC technique. Note that detailed experimental procedures may either be in the Methods/Experimental section or in the supplemenal information.
-An example JSON schema is provided below.
+There may be multiple experiments in the paper. You should only focus on the binding affinity measurements that use the XYZ technique. Note that detailed experimental procedures may either be in the Methods/Experimental section, in the caption of figures, or in the supplemenal information.
+The JSON schema is provided below.
 ```
-{
-    "type": "itc",
-    "global": {
-        "instrument": "Malvern PEAQ-ITC",
-        "temperature": "25",
-        "binding_model": "one_site 1:1"
-    },
-    "measurement": {
-        "buffer": "10 mM Hepes, 150 mM NaCl, 3mM EDTA",
-        "pH": "7.4",
-        "protein_concentration": "15-20 uM",
-        "ligand_concentration": "30 uM",
-        "protein_solution_volume": "3 mL",
-        "first_injection_volume": "0.1 uL",
-        "injection_volume": "2 uL",
-        "injection_time": "4 s",
-        "time_between_injections": "180 s",
-        "total_injections": "20",
-        "stirring_speed": "1000 rpm",
-        "reference_cell_content": "water only",
-        "reference_power": "10 ucal/s"
-    },
-    "control": "titration of ligand into buffer without protein"
-}
+### Schema
 ```
 You should fill in the values using experimental conditions extracted from the journal article following below directions: 
-- Keep all the keys and structure of the JSON schema. If an experimental parameter is not **explicitly** provided, still keep the key and set its value to null (the null value of JSON, not the "null" string). Only faithfully record what is provided in the article and its supplemenal information and do not infer anything by yourself. 
-- For buffer content, always put concentration before the chemical (for example "10 mM NaCl" instead of "NaCl 10 mM"). Remove pH information from the "buffer" key and add it to the "pH" key instead.
+- Keep the structure of the JSON schema by replacing each `{"description": "something", "examples": ["example one"]}` object with a string value you extract from the paper.
+- If an experimental parameter is not **explicitly** provided, still keep the key and set its value to null (the null value of JSON, not the "null" string). Only faithfully record what is provided in the article and its supplemenal information and do not infer anything by yourself. 
 - Use "uM", "uL" instead of "μM", "μL" for better compatibility.
-- The "injection_time" is usually very short (a few seconds), while "time_between_injections" is usually a few minutes. If only one time for injection is reported, typically it is the "time_between_injections".
-- If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example "310 μM (radicicol) or 300 μM (geldanamycin)" and "20 mM Tris-HCl, 1 mM EDTA (protein), 1% DMSO (ligand)"). If there is only one value, however, there is no need to mark the compound associated with that value. 
-- Sometimes, the experimental procedures may be complicated that a single value is not enough to describe them. If this happens, you should add additional description. For example, describe "injection_period" as "150.8 sec for the first five injections, then 156 sec". 
-- Sometimes, a reference experiment (usually called ""control" or "double reference") is run without the ligand or without the compound. Note that this is not the same as the reference cell in the instrument, but rather a complete, independent measurement for control purpose. You should briefly describe the reference experiment in the "control" key if such an experiment is available, focusing on how the reference experiment is different from the actual measurement.
-- Only output the filled JSON schema. Do not include any other text in your response.
+- Occasionally, you may need to look beyond the binding affinity experimental procedures part to look for some information, for example content of the buffer system.
+- Only output the completed JSON schema. DO NOT include any other text in your response. You don't need to show citations from the journal article; just extract and return the information.
+- If the detailed experimental procedures are not available in this paper (for example, some papers may state that the procedures have been described previously), you should look up the referenced paper and extract experimental procedures from there.
+The PDF of the journal article is attached.
