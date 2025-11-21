@@ -1,0 +1,67 @@
+{
+    "type": "fluorescence",
+    "global": {
+        "instrument": {
+            "description": "Brand and model of the fluorescence instrument used. Be concise and avoid including extra information such as manufacturer location.",
+            "examples": ["Fluoromax-4", "Varian Cary Eclipse"]
+        },
+        "temperature": {
+            "description": "Temperature at which the fluorescence experiment was conducted, without unit because it is always in Celsius. Sometimes it is written as \"room temperature\" or \"RT\", in which case you can assume it is 25.",
+            "examples": ["25", "37"]
+        },
+        "binding_model": {
+            "description": "The binding model used to fit the fluorescence data. Common models include \"one-site\", \"two-sites\", \"sequential-binding\", etc. One-site is the most common model, which has other names like single-site or independent sites, but you should note them all as one-site.",
+            "examples": ["one-site", "two-sites", "sequential-binding"]
+        }
+    },
+    "measurement": {
+        "buffer": {
+            "description": "Composition of the buffer used in the ITC experiment. Always put concentration before the chemical (for example \"10 mM NaCl\" instead of \"NaCl 10 mM\"). Remove pH information from the \"buffer\" key and add it to the \"pH\" key instead. Make sure you account for DMSO or other cosolvents if present as they are sometimes not reported as part of the buffer. Separate multiple components with commas only.",
+            "examples": ["10 mM Hepes, 150 mM NaCl, 3mM EDTA", "50 mM Tris-HCl, 150 mM NaCl, 1% DMSO", "20 mM Tris-HCl, 1 mM EDTA (protein), 1% DMSO (ligand)"]
+        },
+        "pH": {
+            "description": "pH of the buffer used in the ITC experiment.",
+            "examples": ["7.4", "6.8"]
+        },
+        "protein_concentration": {
+            "description": "Concentration of the protein in the ITC experiment. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one.",
+            "examples": ["15 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "75-225 uM"]
+        },
+        "ligand_concentration": {
+            "description": "Concentration of the ligand in the ITC experiment. Just extract the information without including any other information. If there are multiple values for a key (for example, because there are multiple compounds with different conditions), list all of them and mark which value is for which (for example \"310 μM (radicicol); 300 μM (geldanamycin)\"). If there is only one value, however, there is no need to mark the compound associated with that value. If the concentration is given as a range, keep it as a range in this format: \"low-high  unit\". Sometimes there may be multiple descriptions of concentrations (usually a more general one and a more specific one); you should use the most specific one.",
+            "examples": ["30 uM", "310 μM (radicicol); 300 μM (geldanamycin)", "10-30 uM"]
+        },
+        "solution_volume": {
+            "description": "Volume of the solution in the fluorescence experiment. Just extract the information without including any other information. If the volume is given as a range, keep it as a range in this format: \"low-high unit\".",
+            "examples": ["1 mL", "300-500 uL"]
+        },
+        "pre_incubation_time": {
+            "description": "Time for incubation before starting the fluorescence measurement.",
+            "examples": ["10 min", "30-60 min"]
+        },
+        "excitation_wavelength": {
+            "description": "Wavelength of the excitation light used in the fluorescence experiment.",
+            "examples": ["280 nm", "254 nm"]
+        },
+        "emission_wavelength": {
+            "description": "Wavelength of the emission light measured in the fluorescence experiment.",
+            "examples": ["340 nm", "330-360 nm"]
+        },
+        "excitation_slit_width": {
+            "description": "Slit width of the excitation light in the fluorescence experiment.",
+            "examples": ["5 nm", "10 nm"]
+        },
+        "emission_slit_width": {
+            "description": "Slit width of the emission light in the fluorescence experiment.",
+            "examples": ["5 nm", "10 nm"]
+        },
+        "scanning_speed": {
+            "description": "Scanning speed of the fluorescence experiment.",
+            "examples": ["120 nm/min", "10-60 nm/min"]
+        }
+    },
+    "control": {
+        "description": "Sometimes, a reference experiment (usually called \"reference\", \"control\", or \"double reference\") is run without the ligand, without the compound, using a different buffer system, or using an unreactive pair of ligand-compound. You should briefly describe the reference experiment in the \"control\" key if such an experiment is available, focusing on how the reference experiment is different from the actual measurement. If conditions from the actual measurement are used as baseline (as opposed to a full control experiment), leave this key as null.",
+        "examples": ["titration of ligand into buffer without protein", "spectra were corrected for the background emission signal from both the buffer and the unbound ligand"]
+    }
+}
